@@ -1,0 +1,256 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Assets/Scripts/jquery-3.4.1.min.js"></script>
+
+    <link href="~/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/fontawesome-free-5.13.0/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Assets/Custom/css/kayitInfo.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+
+    <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                <p class="mr-5"><small>User Info</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p><small>Company & Manager  Info.</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p><small>N11 Info</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                <p><small>Hepsi Burada Info.</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                <p><small>Trendyol Info.</small></p>
+            </div>
+
+            <div class="stepwizard-step col-xs-2">
+                <a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
+                <p><small>Gitti Gidiyor Info.</small></p>
+            </div>
+        </div>
+    </div>
+
+    <form role="form"  style="margin-left:auto; margin-right:auto; max-width:900px;" method="post" action="/Information/Kaydet" enctype="multipart/form-data">
+        <div class="panel panel-primary setup-content" id="step-1">
+            <div class="panel-heading">
+                <h3 class="panel-title">User Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label name="email"  class="control-label">Email</label>
+                        <div style="display:inline; display:flex;">
+                            <input maxlength="200" required type="text" id="Email" name="Email" class="form-control" placeholder="Enter Email" />
+                            <button class="btn btn-danger ckMail" style="font-size:0.8rem; position:relative; margin-left:1%;" name="ckMail" id="ckMail" type="button">Email Kontrol</button>
+                        </div>
+                        <h6 id="kayithata" style="font-size:0.8rem;"></h6>
+
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label">Password</label>
+                        <div>
+                            <input maxlength="200" type="password" required name="UserIPassword" class="form-control" placeholder="Enter Password" />
+                          
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-primary nextBtn pull-right" disabled id="firstNext" type="button">Next</button>
+            </div>
+        </div>
+
+        <div class="panel panel-primary setup-content" id="step-2">
+            <div class="panel-heading">
+                <h3 class="panel-title">Company & Manager Information</h3>
+            </div>
+            <div class="panel-body" >
+                <div class="form-group ">
+                    <label class="control-label">Company Name</label>
+                    <input maxlength="200" required style="height:30px;" height="150" type="text" name="CompanyName" class="form-control" placeholder="Enter Company Name" />
+                </div>
+                <div class="form-group ">
+                    <label class="control-label">Company Address</label>
+                    <input maxlength="200"required type="text" name="CompanyAddress" class="form-control" placeholder="Enter Company Address" />
+                </div>
+                <div class="form-group ">
+                    <label class="control-label">Phone</label>
+                    <input maxlength="200" required type="text" name="Phone" class="form-control" placeholder="Enter Phone" />
+                </div>
+                <div class="form-group ">
+                    <label class="control-label">Manager Email</label>
+                    <input maxlength="200" type="email" name="ManagerEmail" class="form-control" placeholder="Enter Manager Email" />
+                </div>
+                <div class="form-group ">
+                    <label class="control-label">Logo:</label>
+                    <input type="file" name="resim">
+                </div>
+                <div class="form-group ">
+                    <label class="control-label">Xml</label>
+                    <input maxlength="200"  type="url" name="XmlUrl" class="form-control" placeholder="Enter Url" />
+                </div>
+                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+
+        <div class="panel panel-primary setup-content" id="step-3">
+            <div class="panel-heading">
+                <h3 class="panel-title">N11 Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">User Name</label>
+                    <input maxlength="200" type="text" name="N11UserName" class="form-control" placeholder="Enter User Name" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input maxlength="200" type="password" name="N11Password" class="form-control" placeholder="Enter Password" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Market Name</label>
+                    <input maxlength="200" type="text" name="N11MarketName" class="form-control" placeholder="Enter Market Name" />
+                </div>
+                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+
+        <div class="panel panel-primary setup-content" id="step-4">
+            <div class="panel-heading">
+                <h3 class="panel-title">HepsiBurada Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Merchant Id</label>
+                    <input maxlength="200" type="text" name="HBMerchantId" class="form-control" placeholder="Enter Merchant Id" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Market Name</label>
+                    <input maxlength="200" type="text" name="HBMarketName" class="form-control" placeholder="Enter Market Name" />
+                </div>
+
+                <button class="btn btn-success nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+
+        <div class="panel panel-primary setup-content" id="step-5">
+            <div class="panel-heading">
+                <h3 class="panel-title">Trendyol Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Merchant Id</label>
+                    <input maxlength="200" type="text" name="TYMerchantId" class="form-control" placeholder="Enter Merchant Id" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">User Name</label>
+                    <input maxlength="200" type="text" name="TYUserName" class="form-control" placeholder="Enter User Name" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input maxlength="200" type="password" name="TYPassword" class="form-control" placeholder="Enter Password" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Market Name</label>
+                    <input maxlength="200" type="text" name="TYMarketName" class="form-control" placeholder="Enter Market Name" />
+                </div>
+
+                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+
+
+        <div class="panel panel-primary setup-content" id="step-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gittigidiyor Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Key</label>
+                    <input maxlength="200" type="text" name="GGApiKey" class="form-control" placeholder="Enter Key" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Secret</label>
+                    <input maxlength="200" type="text" name="GGApiSecret" class="form-control" placeholder="Enter Secret" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Role Name</label>
+                    <input maxlength="200" type="text" name="GGRolName" class="form-control" placeholder="Enter Role Name" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Role Password</label>
+                    <input maxlength="200" type="password" name="GGPassword" class="form-control" placeholder="Enter Password" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Market Name</label>
+                    <input maxlength="200" type="text" name="GGMarketName" class="form-control" placeholder="Enter Market Name" />
+                </div>
+
+                <button class="btn btn-primary  pull-right" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+
+
+
+    <script src="~/Assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Custom/js/kayitInfo.js"></script>
+
+    <script>
+
+        $("#ckMail").click(() => {
+            var data = {
+                Email: $("#Email").val()
+            };
+
+
+            $.ajax({
+                url: "/Information/CheckMail",
+                type: "post",
+                data: data,
+                success: function (e) {
+                    if (e != false) {
+                        $("#kayithata").css("display", "show");
+                        $("#kayithata").css("color", "green");
+                        $("#kayithata").html("Email Kullanılabilir");
+                        $("#firstNext").removeAttr("disabled", "disapled");
+                    }
+                    else {
+                        $("#kayithata").css("display", "show");
+                        $("#kayithata").css("color", "red");
+                        $("#kayithata").html("Email Kullanılamaz");
+                        $("#firstNext").attr("disabled", "disapled");
+                        
+                    }
+                }
+
+
+                
+            })
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
